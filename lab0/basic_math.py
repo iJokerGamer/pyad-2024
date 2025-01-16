@@ -3,6 +3,8 @@ import scipy as sc
 
 
 def matrix_multiplication(matrix_a, matrix_b):
+
+    
     """
     Задание 1. Функция для перемножения матриц с помощью списков и циклов.
     Вернуть нужно матрицу в формате списка.
