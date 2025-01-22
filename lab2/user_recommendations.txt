@@ -1,0 +1,180 @@
+Book: Matilda
+Predicted rating: 8.01
+SGD rating: 23.01
+
+Book: Harry Potter and the Sorcerer's Stone (Harry Potter (Paperback))
+Predicted rating: 8.22
+SGD rating: 14.41
+
+Book: A Time to Kill
+Predicted rating: 8.12
+SGD rating: 12.12
+
+Book: The Twits
+Predicted rating: 8.08
+SGD rating: 10.64
+
+Book: Yukon Ho!
+Predicted rating: 8.22
+SGD rating: 7.87
+
+Book: Charlotte's Web (Trophy Newbery)
+Predicted rating: 8.44
+SGD rating: 5.71
+
+Book: The Talisman
+Predicted rating: 8.06
+SGD rating: 3.78
+
+Book: Dragons of Winter Night
+Predicted rating: 8.00
+SGD rating: 3.21
+
+Book: Key of Valor (Roberts, Nora. Key Trilogy, 3.)
+Predicted rating: 8.07
+SGD rating: 2.63
+
+Book: The Green Mile
+Predicted rating: 8.07
+SGD rating: 1.78
+
+Book: She Said Yes : The Unlikely Martyrdom of Cassie Bernall
+Predicted rating: 8.04
+SGD rating: 1.46
+
+Book: The Hunt for Red October
+Predicted rating: 8.00
+SGD rating: 0.94
+
+Book: The Color Purple
+Predicted rating: 8.12
+SGD rating: -0.25
+
+Book: The Indian in the Cupboard (rack) (Indian in the Cupboard)
+Predicted rating: 8.04
+SGD rating: -6.19
+
+Book: The Hobbit : The Enchanting Prelude to The Lord of the Rings
+Predicted rating: 8.65
+SGD rating: -15.69
+
+Book: Hawaii
+Predicted rating: 8.02
+SGD rating: -16.09
+
+Book: Evening Class
+Predicted rating: 8.13
+SGD rating: -19.22
+
+Book: The Phantom Tollbooth
+Predicted rating: 8.10
+SGD rating: -28.68
+
+Book: Snow Falling on Cedars
+Predicted rating: 8.05
+SGD rating: -30.85
+
+Book: A Prayer for Owen Meany
+Predicted rating: 8.01
+SGD rating: -42.58
+
+Book: The Magician's Nephew (rack) (Narnia)
+Predicted rating: 8.18
+SGD rating: -43.30
+
+Book: Lonesome Dove
+Predicted rating: 8.59
+SGD rating: -43.39
+
+Book: The Magician's Nephew (Narnia)
+Predicted rating: 8.32
+SGD rating: -44.56
+
+Book: The Lion, the Witch and the Wardrobe (Full-Color Collector's Edition)
+Predicted rating: 8.45
+SGD rating: -44.85
+
+Book: October Sky: A Memoir
+Predicted rating: 8.56
+SGD rating: -45.34
+
+Book: The Giver (21st Century Reference)
+Predicted rating: 8.27
+SGD rating: -49.92
+
+Book: Bridge to Terabithia
+Predicted rating: 8.17
+SGD rating: -57.67
+
+Book: The Hot Zone
+Predicted rating: 8.19
+SGD rating: -72.54
+
+Book: A Swiftly Tilting Planet
+Predicted rating: 8.04
+SGD rating: -92.50
+
+Book: A Wrinkle In Time
+Predicted rating: 8.46
+SGD rating: -92.94
+
+Book: A Wrinkle in Time
+Predicted rating: 8.14
+SGD rating: -93.13
+
+Book: Cat in the Hat (I Can Read It All by Myself Beginner Books)
+Predicted rating: 8.23
+SGD rating: -102.10
+
+Book: Sideways Stories from Wayside School (Wayside School)
+Predicted rating: 8.15
+SGD rating: -102.81
+
+Book: On the Banks of Plum Creek
+Predicted rating: 8.16
+SGD rating: -119.81
+
+Book: Little House in the Big Woods
+Predicted rating: 8.14
+SGD rating: -119.83
+
+Book: Inferno (Mentor)
+Predicted rating: 8.22
+SGD rating: -151.37
+
+Book: Night
+Predicted rating: 8.27
+SGD rating: -161.94
+
+Book: The Black Cauldron (Chronicles of Prydain (Paperback))
+Predicted rating: 8.32
+SGD rating: -214.40
+
+Book: Snow White and the Seven Dwarfs
+Predicted rating: 8.32
+SGD rating: -220.92
+
+Book: The Monster at the End of This Book
+Predicted rating: 8.32
+SGD rating: -238.00
+
+Book: Angels Everywhere: A Season of Angels/Touched by Angels (Avon Romance)
+Predicted rating: 8.09
+SGD rating: -248.15
+
+Book: Master and Commander (Aubrey-Maturin (Paperback))
+Predicted rating: 8.05
+SGD rating: -251.77
+
+Book: Goodnight Moon Board Book
+Predicted rating: 8.43
+SGD rating: -336.72
+
+Book: Frindle
+Predicted rating: 8.05
+SGD rating: -516.84
+
+Book: The Biggest Pumpkin Ever
+Predicted rating: 8.18
+SGD rating: -623.78
+
