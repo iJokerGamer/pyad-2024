@@ -3,118 +3,65 @@ import scipy as sc
 
 
 def matrix_multiplication(matrix_a, matrix_b):
+    shape_a, shape_b = (
+        (len(matrix_a), len(matrix_a[0])),
+        (len(matrix_b), len(matrix_b[0])),
+    )
 
-    
-    """
-    Задание 1. Функция для перемножения матриц с помощью списков и циклов.
-    Вернуть нужно матрицу в формате списка.
-    две матрицы могут быть перемножены, если число столбцов первой матрицы равно числу строк второй матрицы
-    """
-    # put your code here
-    exception = 'две матрицы могут быть перемножены, если число столбцов первой матрицы равно числу строк второй матрицы'
-    rows_A = len(A)
-    cols_B = len(B[0])
-    cols_A = len(A[0])
-    if cols_A != len(B):
-        print(exception)
-    C = [[0]*cols_B for i in range(rows_A)]
-    for i in range(rows_A):
-        for k in range(cols_B):
-            for j in range(cols_A):
-                C[i][k] += A[i][j] * B[j][k]
+    if shape_a[1] != shape_b[0]:
+        raise ValueError(f"invalid matrix shape: {shape_a=}, {shape_b=}")
 
-    return C
-def F(x, a11, a12, a13):
-    return a11 * x**2 + a12 * x + a13
-def P(x, a21, a22, a23):
-    return a21 * x**2 + a22 * x + a23
+    matrix_c = [
+        [
+            sum(matrix_a[i][k] * matrix_b[k][j] for k in range(shape_a[1]))
+            for j in range(shape_b[1])
+        ]
+        for i in range(shape_a[0])
+    ]
+
+    return matrix_c
     
     
 
 
 def functions(a_1, a_2):
-    """
-    Задание 2. На вход поступает две строки, содержащие коэффициенты двух функций.
-    Необходимо найти точки экстремума функции и определить, есть ли у функций общие решения.
-    Вернуть нужно координаты найденных решения списком, если они есть. None, если их бесконечно много.
-    """
-    # put your code here
+    coefs_1 = np.array(list(map(float, a_1.split())))
+    coefs_2 = np.array(list(map(float, a_2.split())))
 
-    a11, a12, a13 = map(float, a_1.split())
-    a21, a22, a23 = map(float, a_2.split())
+    if np.array_equal(coefs_1, coefs_2):
+        return None
 
-    extremum_F = minimize_scalar(F, args=(a11, a12, a13))
-    extremum_P = minimize_scalar(P, args=(a21, a22, a23))
-    
-    extremum_F_x = extremum_F.x
-    extremum_F_value = extremum_F.fun
-    extremum_P_x = extremum_P.x
-    extremum_P_value = extremum_P.fun
+    F = lambda x: np.polyval(coefs_1, x)
 
-       
-    print(f"Экстремум функции F(x) x = {extremum_F_x}, значение F({extremum_F_x}) = {extremum_F_value}")
-    print(f"Экстремум функции P(x) x = {extremum_P_x}, значение P({extremum_P_x}) = {extremum_P_value}")
-    
-    A = a11 - a21
-    B = a12 - a22
-    C = a13 - a23
+    A, B, C = coefs_1 - coefs_2
 
-    D = B**2 - 4*A*C
+    if A == 0:
+        if B == 0:
+            return [] if C != 0 else None
+        root = -C / B
+        return [(root, F(root))]
 
-    if A == 0 and B == 0 and C == 0:
-        return None  
-    elif A == 0 and B == 0:
+    D = B ** 2 - 4 * A * C
+
+    if D < 0:
         return []
-    elif A == 0:
-        x = -C / B
-        return [x]
-    elif D > 0:
-        x1 = (-B + np.sqrt(D)) / (2*A)
-        x2 = (-B - np.sqrt(D)) / (2*A)
-        return [x1, x2]
-    elif D == 0:
-        x = -B / (2*A)
-        return [x]
-    else:
-        return []
+
+    if D == 0:
+        root = -B / (2 * A)
+        return [(root, F(root))]
+
+    root1 = (-B + np.sqrt(D)) / (2 * A)
+    root2 = (-B - np.sqrt(D)) / (2 * A)
+    return sorted([(root1, F(root1)), (root2, F(root2))])
     
-def calculate_moments(data):
-    n = len(data)
-    x_mean = np.mean(data)
-    m2 = np.sum((data - x_mean) ** 2) / n  
-    m3 = np.sum((data - x_mean) ** 3) / n  
-    m4 = np.sum((data - x_mean) ** 4) / n  
-    return m2, m3, m4
+def calculate_moments(x, n):
+    return np.mean((x - np.mean(x)) ** n)
 
 def skew(x):
-    """
-    Задание 3. Функция для расчета коэффициента асимметрии.
-    Необходимо вернуть значение коэффициента асимметрии, округленное до 2 знаков после запятой.
-    """
-    m2, m3, _ = calculate_moments(x)
-    sigma = np.sqrt(m2)  
-
-    if sigma != 0:
-        skew_value = m3 / (sigma ** 3)
-        return round(skew_value, 2)  
-    else:
-        return 0.0  
-    
-    
-
+    return round(calculate_moments(x, 3) / calculate_moments(x, 2) ** (3/2), 2)
 
 def kurtosis(x):
-    """
-    Задание 3. Функция для расчета коэффициента эксцесса.
-    Необходимо вернуть значение коэффициента эксцесса, округленное до 2 знаков после запятой.
-    """
-    m2, _, m4 = calculate_moments(x)
-    sigma = np.sqrt(m2)  # стандартное отклонение
-
-    if sigma != 0:
-        kurtosis_value = (m4 / (sigma ** 4)) - 3
-        return round(kurtosis_value, 2)
-    else:
-        return 0.0 
+    
+    return round(calculate_moments(x, 4) / calculate_moments(x, 2) ** 2 - 3, 2)
     
 
